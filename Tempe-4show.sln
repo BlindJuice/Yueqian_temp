@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32328.378
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tempe-4show", "Tempe-4show\Tempe-4show.csproj", "{877B46E4-7EA0-4DEF-8CB4-1452E2D72755}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{877B46E4-7EA0-4DEF-8CB4-1452E2D72755}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{877B46E4-7EA0-4DEF-8CB4-1452E2D72755}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{877B46E4-7EA0-4DEF-8CB4-1452E2D72755}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{877B46E4-7EA0-4DEF-8CB4-1452E2D72755}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F1A1242D-9571-42A0-9253-BE5AA5854DD1}
+	EndGlobalSection
+EndGlobal
