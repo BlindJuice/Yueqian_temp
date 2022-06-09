@@ -43,7 +43,7 @@ namespace Tempe_4show
                 byte[] recvByte = recvClient.Receive(ref remoteHost);
                 string msg = Encoding.UTF8.GetString(recvByte);
                 //uiLedLabel2.Text = msg.Substring(2,4)+ "";
-                int num ,hum  ;
+                int num ,hum  ;     // num温度  hum湿度
                 int num1,hum1 ;
                 int num2,hum2 ;
                 int num3,hum3 ;
@@ -71,12 +71,12 @@ namespace Tempe_4show
 
                     hum1 = Convert.ToInt32(msg.Substring(7, 2));
                     num1 = Convert.ToInt32(msg.Substring(2, 2));
-                    if (num1 <= 26) { uiTextBox1.FillColor = Color.GreenYellow; }
+                    if (num1 <= 26) { uiTextBox3.FillColor = Color.GreenYellow; }
                     else if (num1 <= 27 && hum1 <= 65) { uiTextBox3.FillColor = Color.GreenYellow; }
                     else if (num1 <= 28 && hum1 <= 55) { uiTextBox3.FillColor = Color.GreenYellow; }
                     else if (num1 <= 29 && hum1 <= 45) { uiTextBox3.FillColor = Color.GreenYellow; }
                     else if (num1 <= 30 && hum1 <= 35) { uiTextBox3.FillColor = Color.GreenYellow; }
-                    else { uiTextBox1.FillColor = Color.Red; }
+                    else { uiTextBox3.FillColor = Color.Red; }
 
 
                     uiTextBox4.Text = msg.Substring(7, 4) + " H";
@@ -87,7 +87,7 @@ namespace Tempe_4show
 
                     hum2 = Convert.ToInt32(msg.Substring(7, 2));
                     num2 = Convert.ToInt32(msg.Substring(2, 2));
-                    if (num2 <= 26) { uiTextBox1.FillColor = Color.GreenYellow; }
+                    if (num2 <= 26) { uiTextBox5.FillColor = Color.GreenYellow; }
                     else if (num2 <= 27 && hum2 <= 65) { uiTextBox5.FillColor = Color.GreenYellow; }
                     else if (num2 <= 28 && hum2 <= 55) { uiTextBox5.FillColor = Color.GreenYellow; }
                     else if (num2 <= 29 && hum2 <= 45) { uiTextBox5.FillColor = Color.GreenYellow; }
@@ -103,7 +103,7 @@ namespace Tempe_4show
 
                     hum3 = Convert.ToInt32(msg.Substring(7, 2));
                     num3 = Convert.ToInt32(msg.Substring(2, 2));
-                    if (num3 <= 26) { uiTextBox1.FillColor = Color.GreenYellow; }
+                    if (num3 <= 26) { uiTextBox7.FillColor = Color.GreenYellow; }
                     else if (num3 <= 27 && hum3 <= 65) { uiTextBox7.FillColor = Color.GreenYellow; }
                     else if (num3 <= 28 && hum3 <= 55) { uiTextBox7.FillColor = Color.GreenYellow; }
                     else if (num3 <= 29 && hum3 <= 45) { uiTextBox7.FillColor = Color.GreenYellow; }
