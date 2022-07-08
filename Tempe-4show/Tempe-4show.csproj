@@ -8,7 +8,7 @@
     <ProjectGuid>{877B46E4-7EA0-4DEF-8CB4-1452E2D72755}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>Tempe_4show</RootNamespace>
-    <AssemblyName>Tempe-4show</AssemblyName>
+    <AssemblyName>JuiceSoft</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -36,7 +36,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>1.ico</ApplicationIcon>
+    <ApplicationIcon>2.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Costura, Version=4.1.0.0, Culture=neutral, PublicKeyToken=9919ef960d84173d, processorArchitecture=MSIL">
@@ -82,6 +82,9 @@
     <EmbeddedResource Include="FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmUI.resx">
+      <DependentUpon>FrmUI.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -108,6 +111,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="1.ico" />
+    <Content Include="2.ico" />
     <None Include="Resources\waterC.png" />
     <None Include="Resources\waterB.png" />
     <None Include="Resources\waterA.png" />

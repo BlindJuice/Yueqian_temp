@@ -16,6 +16,7 @@ namespace Tempe_4show
         public FrmUI()
         {
             InitializeComponent();
+            this.ShowInTaskbar = false;
         }
 
         private readonly UdpClient recvClient = new UdpClient(new IPEndPoint(IPAddress.Any, 2000));//接收IP端口
@@ -100,7 +101,92 @@ namespace Tempe_4show
 
         private void BtnClose_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private readonly UdpClient udpClient = new UdpClient();
+        private readonly IPEndPoint ipEndPoint = new IPEndPoint(IPAddress.Broadcast, 2000);
+
+        private void TbWind_MouseUp(object sender, MouseEventArgs e)
+        {
+            Console.WriteLine(tbWind.Value);
+            string str = "";
+            switch (tbWind.Value)
+            {
+                case 0:
+                    str = "0020.0060.00";
+                    break;
+                case 1:
+                case 2:
+                    str = "0027.5060.00";
+                    break;
+                case 3:
+                    str = "0030.5060.00";
+                    break;
+                default:
+                    break;
+            }
+            if (string.IsNullOrEmpty(str)) return;
+
+            byte[] buffer = Encoding.UTF8.GetBytes(str);
+            udpClient.Send(buffer, buffer.Length, ipEndPoint);
+
+            nITest.Text = "当前风力" + tbWind.Value + "挡";
+        }
+
+        private void NITest_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            if (this.WindowState == FormWindowState.Minimized)
+            {
+                //this.Show();
+                this.WindowState = FormWindowState.Normal; //还原窗体
+            }
+        }
+
+        private void NITest_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                DateTime dt = new DateTime(DateTime.Now.Year,
+                        DateTime.Now.Month,
+                        DateTime.Now.Day,
+                        17, 0, 0);
+                string sec = "距离下班还要" +
+                    Convert.ToInt32((dt - DateTime.Now).TotalMinutes).ToString() + "分钟！Hold On~";
+                nITest.ShowBalloonTip(0, "倒计时", sec, ToolTipIcon.Info);
+            }
+           
+        }
+
+        private void 退出ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.ExitThread();
+        }
+
+        private void 显示ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Normal; //还原窗体
+        }
+
+        private void 仅显示此区域ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (仅显示此区域ToolStripMenuItem.Text == "仅显示此区域")
+            {
+                this.Width = 170;
+                uiPanel2.Visible = false;
+                uiPanel3.Visible = false;
+                uiPanel4.Visible = false;
+                仅显示此区域ToolStripMenuItem.Text = "显示全部";
+            }
+            else
+            {
+                this.Width = 640;
+                uiPanel2.Visible = true;
+                uiPanel3.Visible = true;
+                uiPanel4.Visible = true;
+                仅显示此区域ToolStripMenuItem.Text = "仅显示此区域";
+            }
+
         }
     }
 }
