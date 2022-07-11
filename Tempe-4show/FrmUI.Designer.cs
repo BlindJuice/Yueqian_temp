@@ -31,6 +31,8 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmUI));
             this.uiPanel1 = new Sunny.UI.UIPanel();
+            this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.仅显示此区域ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tbWind = new Sunny.UI.UITrackBar();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -57,12 +59,11 @@
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.显示ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.退出ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nITest = new System.Windows.Forms.NotifyIcon(this.components);
-            this.显示ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.仅显示此区域ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.uiPanel1.SuspendLayout();
+            this.contextMenuStrip2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.uiPanel2.SuspendLayout();
@@ -75,7 +76,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
-            this.contextMenuStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
             // uiPanel1
@@ -103,6 +103,20 @@
             this.uiPanel1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             this.uiPanel1.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
             // 
+            // contextMenuStrip2
+            // 
+            this.contextMenuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.仅显示此区域ToolStripMenuItem});
+            this.contextMenuStrip2.Name = "contextMenuStrip2";
+            this.contextMenuStrip2.Size = new System.Drawing.Size(149, 26);
+            // 
+            // 仅显示此区域ToolStripMenuItem
+            // 
+            this.仅显示此区域ToolStripMenuItem.Name = "仅显示此区域ToolStripMenuItem";
+            this.仅显示此区域ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.仅显示此区域ToolStripMenuItem.Text = "仅显示此区域";
+            this.仅显示此区域ToolStripMenuItem.Click += new System.EventHandler(this.仅显示此区域ToolStripMenuItem_Click);
+            // 
             // tbWind
             // 
             this.tbWind.Direction = Sunny.UI.UITrackBar.BarDirection.Vertical;
@@ -115,6 +129,7 @@
             this.tbWind.Style = Sunny.UI.UIStyle.Custom;
             this.tbWind.TabIndex = 5;
             this.tbWind.Text = "uiTrackBar1";
+            this.tbWind.Visible = false;
             this.tbWind.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
             this.tbWind.MouseUp += new System.Windows.Forms.MouseEventHandler(this.TbWind_MouseUp);
             // 
@@ -428,10 +443,17 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(137, 48);
             // 
+            // 显示ToolStripMenuItem
+            // 
+            this.显示ToolStripMenuItem.Name = "显示ToolStripMenuItem";
+            this.显示ToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
+            this.显示ToolStripMenuItem.Text = "显示主界面";
+            this.显示ToolStripMenuItem.Click += new System.EventHandler(this.显示ToolStripMenuItem_Click);
+            // 
             // 退出ToolStripMenuItem
             // 
             this.退出ToolStripMenuItem.Name = "退出ToolStripMenuItem";
-            this.退出ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.退出ToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.退出ToolStripMenuItem.Text = "退出";
             this.退出ToolStripMenuItem.Click += new System.EventHandler(this.退出ToolStripMenuItem_Click);
             // 
@@ -445,27 +467,6 @@
             this.nITest.Visible = true;
             this.nITest.MouseClick += new System.Windows.Forms.MouseEventHandler(this.NITest_MouseClick);
             this.nITest.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.NITest_MouseDoubleClick);
-            // 
-            // 显示ToolStripMenuItem
-            // 
-            this.显示ToolStripMenuItem.Name = "显示ToolStripMenuItem";
-            this.显示ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.显示ToolStripMenuItem.Text = "显示主界面";
-            this.显示ToolStripMenuItem.Click += new System.EventHandler(this.显示ToolStripMenuItem_Click);
-            // 
-            // contextMenuStrip2
-            // 
-            this.contextMenuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.仅显示此区域ToolStripMenuItem});
-            this.contextMenuStrip2.Name = "contextMenuStrip2";
-            this.contextMenuStrip2.Size = new System.Drawing.Size(149, 26);
-            // 
-            // 仅显示此区域ToolStripMenuItem
-            // 
-            this.仅显示此区域ToolStripMenuItem.Name = "仅显示此区域ToolStripMenuItem";
-            this.仅显示此区域ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.仅显示此区域ToolStripMenuItem.Text = "仅显示此区域";
-            this.仅显示此区域ToolStripMenuItem.Click += new System.EventHandler(this.仅显示此区域ToolStripMenuItem_Click);
             // 
             // FrmUI
             // 
@@ -491,6 +492,7 @@
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTop_MouseDown);
             this.uiPanel1.ResumeLayout(false);
             this.uiPanel1.PerformLayout();
+            this.contextMenuStrip2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.uiPanel2.ResumeLayout(false);
@@ -506,7 +508,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
-            this.contextMenuStrip2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
